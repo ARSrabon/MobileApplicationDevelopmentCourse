@@ -3,14 +3,16 @@ package com.example.msrabon.productinventory;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+
+import java.util.List;
 
 public class UserSignIn_Activity extends AppCompatActivity {
 
@@ -45,11 +47,27 @@ public class UserSignIn_Activity extends AppCompatActivity {
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User user = (User) new Select().from(User.class)
-                                                .where("username=?",edt_username.getText().toString())
-                                                .and("password=?",edt_password.getText().toString()).execute();
+                List<User> users = new Select().from(User.class).execute();
+                boolean flag = false;
+                for (User user: users) {
+                    if(user.getUser_name().equals(edt_username.getText().toString())
+                            && user.getUser_password().equals(edt_password.getText().toString())){  // conditions end here
+//                        Toast.makeText(UserSignIn_Activity.this, user.toString(), Toast.LENGTH_SHORT).show();
+                        flag = true;
+                        break;
+                    }
+                }
 
-                Toast.makeText(UserSignIn_Activity.this,user.toString(),Toast.LENGTH_LONG).show();
+                if(flag){
+                    Intent intent = new Intent(UserSignIn_Activity.this,DefaultView_Activity.class);
+                    editor.putBoolean("loggedin",true);
+                    editor.putString("username",edt_username.getText().toString());
+                    editor.commit();
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(UserSignIn_Activity.this, "Wrong Username Or Password\nTry Again.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
