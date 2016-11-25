@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.msrabon.productinventory">
+
+    <application
+        android:name="com.activeandroid.app.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".DefaultView_Activity" />
+        <activity android:name=".Add_New_Product_Activity" />
+        <activity android:name=".Product_Stock_Updater_Activity" />
+        <activity android:name=".Product_Sell_Activity" />
+        <activity android:name=".UserSignIn_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UserSignUp_Activity"></activity>
+
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="Products.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.msrabon.productinventory.User" />
+    </application>
+
+</manifest>

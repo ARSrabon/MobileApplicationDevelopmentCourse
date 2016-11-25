@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Mybackground"
+    tools:context="com.example.msrabon.productinventory.UserSignUp_Activity">
+
+    <EditText
+        android:id="@+id/edit_new_username"
+        android:layout_marginTop="200dp"
+        style="@style/my_editorStyle"
+        android:hint="Username"
+         />
+
+    <EditText
+        android:id="@+id/edit_new_email"
+        android:layout_below="@+id/edit_new_username"
+        style="@style/my_editorStyle"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/edit_new_password"
+        android:layout_below="@+id/edit_new_email"
+        style="@style/my_editorStyle"
+        android:hint="Password"/>
+    <EditText
+        android:id="@+id/edit_new_password_confirm"
+        android:layout_below="@+id/edit_new_password"
+        style="@style/my_editorStyle"
+        android:hint="Confirm Password"/>
+    <Button
+        android:id="@+id/btn_new_signup"
+        android:layout_below="@+id/edit_new_password_confirm"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Sign UP"/>
+
+</RelativeLayout>
