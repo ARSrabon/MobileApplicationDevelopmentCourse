@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory;
+package com.example.msrabon.productinventory.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.example.msrabon.productinventory.R;
 
 public class Add_New_Product_Activity extends AppCompatActivity {
 

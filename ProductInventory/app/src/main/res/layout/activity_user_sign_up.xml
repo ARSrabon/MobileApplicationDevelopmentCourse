@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Mybackground"
-    tools:context="com.example.msrabon.productinventory.UserSignUp_Activity">
+    tools:context="com.example.msrabon.productinventory.activities.UserSignUp_Activity">
 
     <EditText
         android:id="@+id/edit_new_username"

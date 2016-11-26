@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory;
+package com.example.msrabon.productinventory.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.msrabon.productinventory.R;
+import com.example.msrabon.productinventory.models.User;
 
 public class UserSignUp_Activity extends AppCompatActivity {
 

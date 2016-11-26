@@ -9,18 +9,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".DefaultView_Activity" />
-        <activity android:name=".Add_New_Product_Activity" />
-        <activity android:name=".Product_Stock_Updater_Activity" />
-        <activity android:name=".Product_Sell_Activity" />
-        <activity android:name=".UserSignIn_Activity">
+        <activity android:name=".activities.DefaultView_Activity" />
+        <activity android:name=".activities.Add_New_Product_Activity" />
+        <activity android:name=".activities.Product_Stock_Updater_Activity" />
+        <activity android:name=".activities.Product_Sell_Activity" />
+        <activity android:name=".activities.UserSignIn_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserSignUp_Activity"></activity>
+        <activity android:name=".activities.UserSignUp_Activity"></activity>
 
 
         <meta-data
@@ -31,7 +31,7 @@
             android:value="1" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.example.msrabon.productinventory.User" />
+            android:value="com.example.msrabon.productinventory.*" />
     </application>
 
 </manifest>

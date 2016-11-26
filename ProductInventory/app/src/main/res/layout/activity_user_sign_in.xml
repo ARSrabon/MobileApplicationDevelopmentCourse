@@ -6,7 +6,7 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:background="@color/Mybackground"
-    tools:context="com.example.msrabon.productinventory.UserSignIn_Activity">
+    tools:context="com.example.msrabon.productinventory.activities.UserSignIn_Activity">
 
     <EditText
         android:id="@+id/edit_username"

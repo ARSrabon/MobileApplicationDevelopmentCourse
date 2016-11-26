@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory;
+package com.example.msrabon.productinventory.models;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;

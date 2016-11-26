@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory;
+package com.example.msrabon.productinventory.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.example.msrabon.productinventory.R;
+import com.example.msrabon.productinventory.models.User;
 
 import java.util.List;
 

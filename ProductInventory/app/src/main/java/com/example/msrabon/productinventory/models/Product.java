@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory;
+package com.example.msrabon.productinventory.models;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -18,14 +18,16 @@ public class Product extends Model {
     private String product_id;
 
     @Column(name = "stock")
-    private long product_stock;
+    private int product_stock;
 
     @Column(name = "price")
     private double product_price;
 
-    public Product(String product_name, String product_id, long product_stock, double product_price) {
+    public Product() {
+    }
+
+    public Product(String product_name, int product_stock, double product_price) {
         this.product_name = product_name;
-        this.product_id = product_id;
         this.product_stock = product_stock;
         this.product_price = product_price;
     }
@@ -34,31 +36,20 @@ public class Product extends Model {
         return product_name;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
-    }
-
     public String getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(String product_id) {
-        this.product_id = product_id;
-    }
-
-    public long getProduct_stock() {
+    public int getProduct_stock() {
         return product_stock;
-    }
-
-    public void setProduct_stock(long product_stock) {
-        this.product_stock = product_stock;
     }
 
     public double getProduct_price() {
         return product_price;
     }
 
-    public void setProduct_price(double product_price) {
-        this.product_price = product_price;
+    @Override
+    public String toString() {
+        return product_id + product_name + product_price + product_stock;
     }
 }
