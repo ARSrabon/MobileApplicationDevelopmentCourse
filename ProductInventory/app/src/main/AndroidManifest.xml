@@ -20,8 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.UserSignUp_Activity"></activity>
-
+        <activity android:name=".activities.UserSignUp_Activity" />
 
         <meta-data
             android:name="AA_DB_NAME"
@@ -31,7 +30,9 @@
             android:value="1" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.example.msrabon.productinventory.*" />
+            android:value="com.example.msrabon.productinventory.models.*" />
+
+        <activity android:name=".activities.ProductDetailsView"></activity>
     </application>
 
 </manifest>

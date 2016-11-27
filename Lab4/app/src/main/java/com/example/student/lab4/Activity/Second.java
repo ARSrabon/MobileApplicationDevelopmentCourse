@@ -1,4 +1,4 @@
-package com.example.student.lab4;
+package com.example.student.lab4.Activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.student.lab4.R;
 
 public class Second extends AppCompatActivity {
 

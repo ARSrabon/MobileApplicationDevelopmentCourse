@@ -1,4 +1,4 @@
-package com.example.student.lab4;
+package com.example.student.lab4.Models;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;

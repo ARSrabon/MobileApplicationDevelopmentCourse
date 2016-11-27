@@ -1,6 +1,8 @@
 package com.example.msrabon.productinventory.adapters;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.msrabon.productinventory.R;
+import com.example.msrabon.productinventory.activities.ProductDetailsView;
 import com.example.msrabon.productinventory.models.Product;
 
 import java.util.ArrayList;
@@ -21,9 +24,12 @@ import java.util.ArrayList;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     private ArrayList<Product> productLists;
+    private Context context;
 
-    public ProductAdapter(ArrayList<Product> productLists) {
+
+    public ProductAdapter(ArrayList<Product> productLists, Context context) {
         this.productLists = productLists;
+        this.context = context;
     }
 
     @Override
@@ -34,17 +40,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder holder, int position) {
+    public void onBindViewHolder(final ProductViewHolder holder, final int position) {
         holder.product_id.setText("PID: " + productLists.get(position).getProduct_id());
         holder.product_Name.setText("Name: " + productLists.get(position).getProduct_name());
         holder.product_Stock.setText("Stock: " + productLists.get(position).getProduct_stock());
         holder.product_price.setText("Price: " + productLists.get(position).getProduct_price());
-        Log.d("Product_Adapter", productLists.get(position).getProduct_name());
+
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("cardsnotworking", productLists.get(position).getProduct_name());
+                Intent intent = new Intent(context, ProductDetailsView.class);
+                intent.putExtra("product_id",position);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        Log.d("adapter", String.valueOf(productLists.size()));
+//        Log.d("adapter", String.valueOf(productLists.size()));
         return productLists.size();
     }
 
@@ -57,13 +73,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         TextView product_price;
 
 
-        public ProductViewHolder(View itemView) {
+        public ProductViewHolder(final View itemView) {
             super(itemView);
-            cv = (CardView) itemView.findViewById(R.id.recyle_view);
+            cv = (CardView) itemView.findViewById(R.id.cardview);
             product_id = (TextView) itemView.findViewById(R.id.product_id);
             product_Name = (TextView) itemView.findViewById(R.id.product_name);
             product_Stock = (TextView) itemView.findViewById(R.id.product_stock);
             product_price = (TextView) itemView.findViewById(R.id.product_price);
+//              This one worked !!!
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//                }
+//            });
         }
     }
 

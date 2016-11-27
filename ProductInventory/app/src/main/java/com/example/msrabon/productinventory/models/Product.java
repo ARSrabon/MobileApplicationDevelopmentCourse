@@ -4,11 +4,15 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
+import com.activeandroid.query.Select;
+
+import java.util.List;
+
 /**
  * Created by msrabon on 11/16/16.
  */
 
-@Table(name = "products")
+@Table(name = "productstable")
 public class Product extends Model {
 
     @Column(name = "name")
@@ -26,8 +30,9 @@ public class Product extends Model {
     public Product() {
     }
 
-    public Product(String product_name, int product_stock, double product_price) {
+    public Product(String product_name, String product_id, int product_stock, double product_price) {
         this.product_name = product_name;
+        this.product_id = product_id;
         this.product_stock = product_stock;
         this.product_price = product_price;
     }
