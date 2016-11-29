@@ -1,13 +1,8 @@
-package com.example.msrabon.productinventory.models;
+package com.example.msrabon.activeandroidtest.models;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
-
-import com.activeandroid.query.Select;
-
-import java.util.List;
-import java.util.Locale;
 
 /**
  * Created by msrabon on 11/16/16.
@@ -19,7 +14,7 @@ public class Product extends Model {
     @Column(name = "p_name")
     private String product_name;
 
-    @Column(name = "p_id")
+    @Column(name = "p_id", unique = true)
     private String product_id;
 
     @Column(name = "p_stock")
@@ -31,7 +26,7 @@ public class Product extends Model {
     @Column(name = "p_category")
     private Category category;
 
-    public Product(){
+    public Product() {
         super();
     }
 
@@ -63,8 +58,28 @@ public class Product extends Model {
         return product_price;
     }
 
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
+    }
+
+    public void setProduct_stock(int product_stock) {
+        this.product_stock = product_stock;
+    }
+
+    public void setProduct_price(double product_price) {
+        this.product_price = product_price;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
-        return product_id + product_name + product_price + product_stock;
+        return product_name + " " + product_id + " " + product_price + " " + product_stock;
     }
 }

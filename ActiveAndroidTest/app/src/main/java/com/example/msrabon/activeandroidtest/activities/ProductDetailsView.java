@@ -1,4 +1,4 @@
-package com.example.msrabon.productinventory.activities;
+package com.example.msrabon.activeandroidtest.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
-import com.example.msrabon.productinventory.R;
-import com.example.msrabon.productinventory.models.Product;
+import com.example.msrabon.activeandroidtest.R;
+import com.example.msrabon.activeandroidtest.models.Product;
+
 
 import java.util.ArrayList;
 

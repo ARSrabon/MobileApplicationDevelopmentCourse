@@ -1,7 +1,8 @@
-package com.example.msrabon.productinventory.adapters;
+package com.example.msrabon.activeandroidtest.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.msrabon.productinventory.R;
-import com.example.msrabon.productinventory.models.Category;
-import com.example.msrabon.productinventory.models.Product;
+import com.example.msrabon.activeandroidtest.R;
+import com.example.msrabon.activeandroidtest.activities.ProductDetailsView;
+import com.example.msrabon.activeandroidtest.models.Category;
+import com.example.msrabon.activeandroidtest.models.Product;
 
 import java.util.ArrayList;
-
 
 /**
  * Created by student on 10/26/16.
@@ -53,10 +54,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("cardsnotworking", productLists.get(position).getProduct_name());
-//                Intent intent = new Intent(context, ProductDetailsView.class);
-//                intent.putExtra("product_id",position);
-//                context.startActivity(intent);
+                Product product = productLists.get(position);
+                Log.d("cardsnotworking", String.valueOf(product.getId().intValue()) );
+                Intent intent = new Intent(context, ProductDetailsView.class);
+                intent.putExtra("product_id",position);
+                context.startActivity(intent);
             }
         });
 
@@ -64,7 +66,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public int getItemCount() {
-//        Log.d("adapter", String.valueOf(productLists.size()));
+        Log.d("adapter", String.valueOf(productLists.size()));
         return productLists.size();
     }
 

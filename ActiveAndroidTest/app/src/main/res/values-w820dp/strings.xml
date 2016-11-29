@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="My_sharedPrefs_file_name">activeAndroid_prefs</string>
+</resources>

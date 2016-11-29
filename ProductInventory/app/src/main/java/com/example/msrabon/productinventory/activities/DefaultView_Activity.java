@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.activeandroid.query.Select;
 import com.example.msrabon.productinventory.R;
 import com.example.msrabon.productinventory.adapters.ProductAdapter;
+import com.example.msrabon.productinventory.models.Category;
 import com.example.msrabon.productinventory.models.Product;
 
 import java.util.ArrayList;
@@ -43,26 +44,41 @@ public class DefaultView_Activity extends AppCompatActivity {
         }
 
         try {
-            Log.d("dbempty", String.valueOf(sharedPreferences.getString("dbempty","")));
-        }catch (Exception e){
+            Log.d("dbempty", String.valueOf(sharedPreferences.getString("dbempty", "")));
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        if(sharedPreferences.getString("dbempty","true").equals("true")){
-            ArrayList <Product> products = new ArrayList<Product>();
-            products.add(new Product("Acer","lp-1",65,199.99));
-            products.add(new Product("ASUS","lp-2",15,399.99));
-            products.add(new Product("HP","lp-3",45,299.90));
-            products.add(new Product("Lennovo","lp-4",5,500.99));
+        if (sharedPreferences.getString("dbempty", "true").equals("true")) {
+            ArrayList<Category> category = new ArrayList<Category>();
+            category.add(new Category("NoteBook"));
+            category.add(new Category("iPad"));
+            category.add(new Category("MacBook"));
+            category.add(new Category("Laptop"));
 
-            for (Product product: products) {
+            for (Category category1 : category) {
+                category1.save();
+            }
+
+
+            ArrayList<Product> products = new ArrayList<Product>();
+            products.add(new Product("Acer", "lp-1", 65, 199.99, category.get(3)));
+            products.add(new Product("ASUS", "lp-2", 15, 399.99, category.get(3)));
+            products.add(new Product("HP", "lp-3", 45, 299.90, category.get(3)));
+            products.add(new Product("Lennovo", "lp-4", 5, 500.99, category.get(3)));
+            products.add(new Product("MacBook15'", "mac_15p", 10, 2099.9, category.get(2)));
+            products.add(new Product("iPad 9'", "tab_9", 25, 1899.0, category.get(1)));
+            products.add(new Product("ASUS", "lp-2", 15, 399.99, category.get(0)));
+
+            for (Product product : products) {
                 try {
                     product.save();
-                }catch (SQLException q){
+                } catch (SQLException q) {
                     q.printStackTrace();
                 }
             }
-            editor.putString("dbempty","false");
+
+            editor.putString("dbempty", "false");
             editor.commit();
         }
 
@@ -76,14 +92,11 @@ public class DefaultView_Activity extends AppCompatActivity {
         try {
             List<Product> productList = new Select().from(Product.class).execute();
             Log.d("mylist", productList.toString());
-            productAdapter = new ProductAdapter((ArrayList<Product>) productList , DefaultView_Activity.this);
+            productAdapter = new ProductAdapter((ArrayList<Product>) productList, DefaultView_Activity.this);
             recyclerView.setAdapter(productAdapter);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-
 
 
     }
@@ -113,7 +126,7 @@ public class DefaultView_Activity extends AppCompatActivity {
                 break;
             case R.id.action_logout:
                 editor = getSharedPreferences(getString(R.string.My_sharedPrefs_file_name), Context.MODE_PRIVATE).edit();
-                editor.putBoolean("loggedin",false);
+                editor.putBoolean("loggedin", false);
                 editor.commit();
                 finish();
                 break;

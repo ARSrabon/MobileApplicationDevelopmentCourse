@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActiveAndroid Test</string>
+    <string name="My_sharedPrefs_file_name">activeAndroid_prefs</string>
+</resources>
