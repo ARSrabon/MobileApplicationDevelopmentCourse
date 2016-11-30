@@ -15,10 +15,10 @@ import java.util.Date;
 public class SellHistory extends Model {
 
     @Column(name = "p_id")
-    private int product_id;
+    private long product_id;
 
     @Column(name = "quantity")
-    private int sell_quantity;
+    private long sell_quantity;
 
     @Column(name = "sold_price")
     private double sold_price;
@@ -30,20 +30,28 @@ public class SellHistory extends Model {
         super();
     }
 
-    public SellHistory(int product_id, int sell_quantity, double sold_price) {
+//    public SellHistory(int product_id, int sell_quantity, double sold_price) {
+//        this.product_id = product_id;
+//        this.sell_quantity = sell_quantity;
+//        this.sold_price = sold_price;
+//        Date date = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.YYY hh:mm:ss a");
+//        this.timeStamp = simpleDateFormat.format(date);
+//    }
+
+
+    public SellHistory(long product_id, long sell_quantity, double sold_price, String timeStamp) {
         this.product_id = product_id;
         this.sell_quantity = sell_quantity;
         this.sold_price = sold_price;
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.YYY hh:mm:ss a");
-        this.timeStamp = simpleDateFormat.format(date);
+        this.timeStamp = timeStamp;
     }
 
-    public int getProduct_id() {
+    public long getProduct_id() {
         return product_id;
     }
 
-    public int getSell_quantity() {
+    public long getSell_quantity() {
         return sell_quantity;
     }
 

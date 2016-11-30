@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.activeandroid.query.Select;
 import com.example.msrabon.activeandroidtest.R;
 import com.example.msrabon.activeandroidtest.adapters.ProductAdapter;
+import com.example.msrabon.activeandroidtest.models.Category;
 import com.example.msrabon.activeandroidtest.models.Product;
 
 import java.util.ArrayList;
@@ -109,9 +110,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.sell_product: intent = new Intent(MainActivity.this,Product_Sell_Activity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.add_category:
+                break;
             case R.id.action_logout:
                 SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.My_sharedPrefs_file_name), Context.MODE_PRIVATE).edit();
-                editor.putBoolean("loggedin",false);
+                editor.putBoolean("loggedin", false);
                 editor.commit();
                 finish();
                 break;

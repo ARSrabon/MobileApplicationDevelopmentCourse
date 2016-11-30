@@ -53,7 +53,7 @@ public class Product_Stock_Updater_Activity extends AppCompatActivity implements
 
         productList = new Select().from(Product.class).execute();
 
-        ArrayAdapter<Product> productArrayAdapter = new ArrayAdapter<Product>(this,android.R.layout.simple_spinner_item,productList);
+        ArrayAdapter<Product> productArrayAdapter = new ArrayAdapter<Product>(this,R.layout.spinner_item,productList);
         productArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         product_spinner.setAdapter(productArrayAdapter);
 
@@ -69,11 +69,11 @@ public class Product_Stock_Updater_Activity extends AppCompatActivity implements
                     }
                     count++;
                 }
-                Log.d("The loop","Completed");
+//                Log.d("The loop","Completed");
             }
         }
 
-        Log.d("The loop","Completed");
+//        Log.d("The loop !!!!","Completed");
 
         product_spinner.setOnItemSelectedListener(this);
 
@@ -120,7 +120,7 @@ public class Product_Stock_Updater_Activity extends AppCompatActivity implements
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         products = productList.get(0);
-        edit_ProductPrice.setText((int) products.getProduct_price());
-        edit_ProductStock.setText(products.getProduct_stock());
+        edit_ProductPrice.setText(String.valueOf(products.getProduct_price()));
+        edit_ProductStock.setText(String.valueOf(products.getProduct_stock()));
     }
 }

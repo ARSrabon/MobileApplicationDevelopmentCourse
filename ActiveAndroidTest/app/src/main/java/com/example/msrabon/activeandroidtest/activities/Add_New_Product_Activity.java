@@ -60,7 +60,7 @@ public class Add_New_Product_Activity extends AppCompatActivity implements Adapt
         categoryList = new Select().from(Category.class).execute();
 
 //        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categories);
-        ArrayAdapter<Category> dataAdapter = new ArrayAdapter<Category>(this,android.R.layout.simple_spinner_item,categoryList);
+        ArrayAdapter<Category> dataAdapter = new ArrayAdapter<Category>(this,R.layout.spinner_item,categoryList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_category.setAdapter(dataAdapter);
         spinner_category.setOnItemSelectedListener(this);
@@ -132,7 +132,7 @@ public class Add_New_Product_Activity extends AppCompatActivity implements Adapt
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         category = categoryList.get(adapterView.getSelectedItemPosition());
-        Log.d("onNothingSelected: ",category.toString());
+        Log.d("onSelected: ",category.toString());
     }
 
     @Override

@@ -31,10 +31,12 @@ public class ProductDetailsView extends AppCompatActivity {
     TextView txt_productId;
     TextView txt_productPrice;
     TextView txt_productStock;
+    TextView txt_productCategory;
     private SharedPreferences.Editor editor;
 
-    int product_id;
+    long product_id;
 
+    Product product;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +45,11 @@ public class ProductDetailsView extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        final ArrayList<Product> productList = (ArrayList) new Select().from(Product.class).execute();
         final Intent intent = getIntent();
-        product_id = intent.getIntExtra("product_id",1);
-        Log.d("details",productList.get(intent.getIntExtra("product_id",1)).getProduct_name());
+        product_id = intent.getLongExtra("product_id",-1);
+        Log.d("details",String.valueOf(intent.getLongExtra("product_id",-1)));
+
+        product = Product.load(Product.class,product_id);
 
         btn_stckupdate = (Button) findViewById(R.id.btn_stockupdater);
         btn_seller = (Button) findViewById(R.id.btn_product_sell);
@@ -57,10 +60,10 @@ public class ProductDetailsView extends AppCompatActivity {
         txt_productStock = (TextView) findViewById(R.id.view_productstock);
         txt_productPrice = (TextView) findViewById(R.id.view_productprice);
 
-        txt_productId.setText(productList.get(intent.getIntExtra("product_id",1)).getProduct_id());
-        txt_productName.setText(productList.get(intent.getIntExtra("product_id",1)).getProduct_name());
-        txt_productStock.setText(String.valueOf(productList.get(intent.getIntExtra("product_id",1)).getProduct_stock()));
-        txt_productPrice.setText(String.valueOf(productList.get(intent.getIntExtra("product_id",1)).getProduct_price()));
+        txt_productId.setText(String.valueOf(product.getProduct_id()));
+        txt_productName.setText(product.getProduct_name());
+        txt_productStock.setText(String.valueOf(product.getProduct_stock()));
+        txt_productPrice.setText(String.valueOf(product.getProduct_price()));
 
         btn_seller.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +78,8 @@ public class ProductDetailsView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(ProductDetailsView.this,Product_Stock_Updater_Activity.class);
-                intent1.putExtra("product_id",product_id);
+                intent1.putExtra("selectedProduct",true);
+                intent1.putExtra("selectedProductId",product_id);
                 startActivity(intent1);
             }
         });
@@ -83,8 +87,10 @@ public class ProductDetailsView extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Product product = productList.get(product_id);
                 product.delete(Product.class,product_id);
+                Intent intent1 = new Intent(ProductDetailsView.this,MainActivity.class);
+                startActivity(intent1);
+                finish();
             }
         });
     }
@@ -120,6 +126,13 @@ public class ProductDetailsView extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent1 = new Intent(ProductDetailsView.this,MainActivity.class);
+        startActivity(intent1);
+        finish();
     }
 
 }

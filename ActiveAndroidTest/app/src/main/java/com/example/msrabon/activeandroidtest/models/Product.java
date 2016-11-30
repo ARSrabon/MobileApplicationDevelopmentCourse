@@ -18,7 +18,7 @@ public class Product extends Model {
     private String product_id;
 
     @Column(name = "p_stock")
-    private int product_stock;
+    private long product_stock;
 
     @Column(name = "p_price")
     private double product_price;
@@ -30,7 +30,7 @@ public class Product extends Model {
         super();
     }
 
-    public Product(String product_name, String product_id, int product_stock, double product_price, Category category) {
+    public Product(String product_name, String product_id, long product_stock, double product_price, Category category) {
         this.product_name = product_name;
         this.product_id = product_id;
         this.product_stock = product_stock;
@@ -50,7 +50,7 @@ public class Product extends Model {
         return product_id;
     }
 
-    public int getProduct_stock() {
+    public long getProduct_stock() {
         return product_stock;
     }
 
@@ -66,7 +66,7 @@ public class Product extends Model {
         this.product_id = product_id;
     }
 
-    public void setProduct_stock(int product_stock) {
+    public void setProduct_stock(long product_stock) {
         this.product_stock = product_stock;
     }
 
@@ -80,6 +80,6 @@ public class Product extends Model {
 
     @Override
     public String toString() {
-        return product_name + " " + product_id + " " + product_price + " " + product_stock;
+        return product_name + " " + product_id + " $" + product_price;
     }
 }

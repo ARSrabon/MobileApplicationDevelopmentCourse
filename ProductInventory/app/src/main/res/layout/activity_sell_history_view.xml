@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sell_history_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.msrabon.productinventory.activities.DefaultView_Activity">
+    tools:context="com.example.msrabon.productinventory.activities.SellHistoryViewActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -17,10 +18,9 @@
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyle_view"
+        android:id="@+id/recyle_view_sales"
         android:layout_below="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
-    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

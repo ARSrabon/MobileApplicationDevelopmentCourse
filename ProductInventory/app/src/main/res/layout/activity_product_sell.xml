@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.msrabon.activeandroidtest.activities.Product_Sell_Activity">
+    tools:context="com.example.msrabon.productinventory.activities.Product_Sell_Activity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -31,7 +31,7 @@
         android:textAlignment="center"/>
 
     <TextView
-        android:id="@id/lbl_pstock"
+        android:id="@+id/lbl_pstock"
         android:layout_below="@id/spinner_products"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:text="Product Stock:"/>
     <EditText
         android:id="@+id/edit_sellStocks"
-        android:layout_below="@id/lbl_pstock"
+        android:layout_below="@+id/lbl_pstock"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

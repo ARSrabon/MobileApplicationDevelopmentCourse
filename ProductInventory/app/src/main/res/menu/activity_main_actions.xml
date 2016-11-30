@@ -18,6 +18,10 @@
         android:title="Sell Product"/>
 
     <item
+        android:id="@+id/sale_history"
+        android:title="Sales History"/>
+
+    <item
         android:id="@+id/action_logout"
         android:title="Log Out"/>
 </menu>

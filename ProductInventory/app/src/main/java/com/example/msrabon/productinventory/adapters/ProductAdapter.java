@@ -1,7 +1,9 @@
 package com.example.msrabon.productinventory.adapters;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,11 +13,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.msrabon.productinventory.R;
+import com.example.msrabon.productinventory.activities.ProductDetailsView;
 import com.example.msrabon.productinventory.models.Category;
 import com.example.msrabon.productinventory.models.Product;
 
 import java.util.ArrayList;
-
 
 /**
  * Created by student on 10/26/16.
@@ -34,7 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item_viewproduct, parent, false);
         ProductViewHolder viewHolder = new ProductViewHolder(v);
         return viewHolder;
     }
@@ -53,10 +55,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("cardsnotworking", productLists.get(position).getProduct_name());
-//                Intent intent = new Intent(context, ProductDetailsView.class);
-//                intent.putExtra("product_id",position);
-//                context.startActivity(intent);
+                Product product = productLists.get(position);
+                long product_uid = product.getId();
+                Log.d("cardsnotworking", String.valueOf(product.getId().intValue()) );
+                Intent intent = new Intent(context, ProductDetailsView.class);
+                intent.putExtra("product_id",product_uid);
+                context.startActivity(intent);
+                ((Activity) context).finish();
             }
         });
 
@@ -80,7 +85,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         public ProductViewHolder(final View itemView) {
             super(itemView);
-            cv = (CardView) itemView.findViewById(R.id.cardview);
+            cv = (CardView) itemView.findViewById(R.id.cardview_products);
             product_id = (TextView) itemView.findViewById(R.id.product_id);
             product_Name = (TextView) itemView.findViewById(R.id.product_name);
             product_Stock = (TextView) itemView.findViewById(R.id.product_stock);

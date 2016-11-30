@@ -123,9 +123,23 @@ public class DefaultView_Activity extends AppCompatActivity {
                 break;
             case R.id.stock_updater:
                 intent = new Intent(DefaultView_Activity.this, Product_Stock_Updater_Activity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.sell_product: intent = new Intent(DefaultView_Activity.this,Product_Sell_Activity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.add_category:
+                break;
+
+            case R.id.sale_history: intent = new Intent(DefaultView_Activity.this,SellHistoryViewActivity.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.action_logout:
-                editor = getSharedPreferences(getString(R.string.My_sharedPrefs_file_name), Context.MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.My_sharedPrefs_file_name), Context.MODE_PRIVATE).edit();
                 editor.putBoolean("loggedin", false);
                 editor.commit();
                 finish();

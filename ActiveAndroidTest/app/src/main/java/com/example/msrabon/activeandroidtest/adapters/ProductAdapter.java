@@ -35,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item_viewproduct, parent, false);
         ProductViewHolder viewHolder = new ProductViewHolder(v);
         return viewHolder;
     }
@@ -55,9 +55,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             @Override
             public void onClick(View view) {
                 Product product = productLists.get(position);
+                long product_uid = product.getId();
                 Log.d("cardsnotworking", String.valueOf(product.getId().intValue()) );
                 Intent intent = new Intent(context, ProductDetailsView.class);
-                intent.putExtra("product_id",position);
+                intent.putExtra("product_id",product_uid);
                 context.startActivity(intent);
             }
         });
@@ -66,7 +67,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public int getItemCount() {
-        Log.d("adapter", String.valueOf(productLists.size()));
+//        Log.d("adapter", String.valueOf(productLists.size()));
         return productLists.size();
     }
 
@@ -82,7 +83,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         public ProductViewHolder(final View itemView) {
             super(itemView);
-            cv = (CardView) itemView.findViewById(R.id.cardview);
+            cv = (CardView) itemView.findViewById(R.id.cardview_products);
             product_id = (TextView) itemView.findViewById(R.id.product_id);
             product_Name = (TextView) itemView.findViewById(R.id.product_name);
             product_Stock = (TextView) itemView.findViewById(R.id.product_stock);
