@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myBackground"
+    tools:context="com.example.student.productinventory.activities.UserSignUp_Activity">
+
+    <EditText
+        android:id="@+id/edit_new_username"
+        android:layout_marginTop="100dp"
+        style="@style/my_editorStyles"
+        android:hint="Username"/>
+
+    <EditText
+        android:id="@+id/edit_new_email"
+        android:layout_below="@+id/edit_new_username"
+        style="@style/my_editorStyles"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/edit_new_password"
+        android:layout_below="@+id/edit_new_email"
+        style="@style/my_editorStyles"
+        android:hint="Password"/>
+    <EditText
+        android:id="@+id/edit_new_password_confirm"
+        android:layout_below="@+id/edit_new_password"
+        style="@style/my_editorStyles"
+        android:hint="Confirm Password"/>
+
+    <LinearLayout
+        android:id="@+id/spinner_holder"
+        android:layout_below="@+id/edit_new_password_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+           style="@style/my_lbl_views"
+            android:text="UserType"
+            android:layout_weight="1" />
+        <Spinner
+            android:id="@+id/spinner_usertype"
+            android:layout_marginTop="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_new_signup"
+        android:layout_below="@+id/spinner_holder"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Sign UP"/>
+
+</RelativeLayout>
