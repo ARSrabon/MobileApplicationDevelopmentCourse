@@ -1,7 +1,9 @@
-package com.example.student.lab6;
+package com.example.student.lab6.Activies;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.student.lab6.R;
 
 public class Main2Activity extends AppCompatActivity {
 
