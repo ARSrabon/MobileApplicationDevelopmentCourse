@@ -36,8 +36,8 @@ using Firebase Database module for online database and pracctice CRUD operations
 A Simple Rock Paper Scissors Game for Android Devices.
 
 # Mid Term Exam
-## Product Inventory
-### APP Name: 
+## APP Name: TrackMyProducts
+### Type: Product Inventory
 #### Features: <br>
 1. User SignIn and SignUp <br>
 2. View all products (in cardview) <br>
@@ -46,8 +46,8 @@ A Simple Rock Paper Scissors Game for Android Devices.
 5. After sell Stock update <br>
 
 # Final Project
-## Apartment/Flat/Room/Mess Rental
-### APP Name: 
+## APP Name: FindYourNextHome
+### Type: Apartment/Flat/Room/Mess Rental
 #### Features: <br>
 1. User SignIn and SignUp <br>
 2. View all Rental Ad's <br>
@@ -57,7 +57,3 @@ A Simple Rock Paper Scissors Game for Android Devices.
 6. In-App Messaging for commnication <br>
 7. View in GoogleMap <br>
 8. Advanced serach using locations,categories,ratings <br>
-
-
-
-
