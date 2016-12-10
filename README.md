@@ -45,6 +45,12 @@ A Simple Rock Paper Scissors Game for Android Devices.
 4. Stock and Price update <br>
 5. After sell Stock update <br>
 
+## ScreenShots <br>
+<img src="https://cloud.githubusercontent.com/assets/14258095/21076068/5c1f8e98-bf4c-11e6-8fd9-fad32b44ce0b.png" width="210" >
+<img src="https://cloud.githubusercontent.com/assets/14258095/21076071/676d5c08-bf4c-11e6-81e9-bb1e1fd928d5.png" width="210" >
+<img src="https://cloud.githubusercontent.com/assets/14258095/21076072/6d36081a-bf4c-11e6-9440-48798020e6c7.png" width="210" >
+<img src="https://cloud.githubusercontent.com/assets/14258095/21076073/6d68acac-bf4c-11e6-8fd6-b441693c1378.png" width="210" >
+
 # Final Project
 ## APP Name: FindYourNextHome
 ### Type: Apartment/Flat/Room/Mess Rental
