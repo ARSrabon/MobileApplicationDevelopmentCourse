@@ -45,7 +45,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(final ProductViewHolder holder, final int position) {
 
-        holder.product_id.setText("PID: " + productLists.get(position).getProduct_id());
+        holder.product_id.setText("Product ID: " + productLists.get(position).getProduct_id());
         holder.product_Name.setText("Name: " + productLists.get(position).getProduct_name());
         holder.product_Stock.setText("Stock: " + productLists.get(position).getProduct_stock());
         holder.product_price.setText("Price: " + productLists.get(position).getProduct_price());

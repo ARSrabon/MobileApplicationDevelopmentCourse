@@ -113,11 +113,11 @@ public class DefaultView_Activity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Toast.makeText(this, item.getTitle(), Toast.LENGTH_LONG).show();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         Intent intent;
         switch (item.getItemId()) {
             case R.id.add_prouct:

@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot temp : dataSnapshot.getChildren()) {
                     Product product = temp.getValue(Product.class); // getting the product object From snapshot
-                    product.setPrice(product.getPrice() + 100); // updating the product price
-                    productUpdateDatabaseReference = temp.getRef(); // getting the current product object reference
-                    productUpdateDatabaseReference.setValue(product); // saving the updated values
+//                    product.setPrice(product.getPrice() + 100); // updating the product price
+//                    productUpdateDatabaseReference = temp.getRef(); // getting the current product object reference
+//                    productUpdateDatabaseReference.setValue(product); // saving the updated values
                     dataNew += product.getProductName() + " " + product.getPrice() + "\n";
                 }
                 txt_viewDatabase.setText(dataNew);

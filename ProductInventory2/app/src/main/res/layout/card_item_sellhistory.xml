@@ -11,37 +11,58 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/product_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/product_name"/>
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/product_id"
-                android:layout_below="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_below="@+id/product_name"
+                android:textSize="15sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/product_stock"
-                android:layout_below="@id/product_id"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/product_price"
-                android:layout_below="@+id/product_stock"/>
             <TextView
                 android:id="@+id/product_category"
-                android:layout_below="@+id/product_name"
-                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_layout"
+                android:textSize="15sp" />
 
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_id">
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_stock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/product_saleDue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

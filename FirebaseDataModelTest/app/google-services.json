@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "775563154089",
+    "firebase_url": "https://fir-modulestest.firebaseio.com",
+    "project_id": "fir-modulestest",
+    "storage_bucket": "fir-modulestest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775563154089:android:1579005c1d58d105",
+        "android_client_info": {
+          "package_name": "com.example.msrabon.firebasedatamodeltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775563154089-964ec7ohgm500vh40rsiqujndg43iojo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuaQRKsFCa7SA7gWSSnei0o6OYH3M2FRM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
