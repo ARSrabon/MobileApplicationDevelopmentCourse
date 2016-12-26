@@ -1,4 +1,0 @@
-<resources>
-    <string name="app_name">Product Inventory</string>
-    <string name="My_sharedPrefs_file_name">Product_inventory_prefs</string>
-</resources>
