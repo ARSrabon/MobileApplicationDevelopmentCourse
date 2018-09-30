@@ -16,7 +16,7 @@ This Repo Contains all Projects of the Lab class , Assignments And Exam of Mobil
 ## Lab 5: Volley Library
 Using Volley library and Google gson library in Android Application.
 Related Links: <br>
-1. http://posttestserver.com/  <br>
+1. http://posttestserver.com/ (new Link: http://ptsv2.com) <br> 
 2. http://www.mocky.io/ <br>
 ### Extra: Intro to Android Shared Preference
 
